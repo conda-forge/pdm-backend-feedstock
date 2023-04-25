@@ -21,6 +21,7 @@ requirements:
   host:
     - pip
     - python
+    - importlib-metadata >=3.6  # [py<310]
   run:
     - python
     - importlib-metadata >=3.6  # [py<310]
