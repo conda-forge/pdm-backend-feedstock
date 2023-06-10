@@ -9,6 +9,8 @@ Package license: MIT
 
 Summary: The build backend used by PDM that supports latest packaging standards.
 
+Development: https://github.com/pdm-project/pdm-backend
+
 Current build status
 ====================
 
