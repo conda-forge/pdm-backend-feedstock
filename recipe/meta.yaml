@@ -15,7 +15,7 @@ build:
   script: {{ PYTHON }} -m build && {{ PYTHON }} -m pip install dist/pdm_backend-{{ version }}-py3-none-any.whl
   noarch: python
 
-requirements:     # [build_platform != target_platform]
+requirements:
   host:
     - python >=3.8
     - python-build
