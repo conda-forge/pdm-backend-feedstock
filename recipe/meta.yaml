@@ -12,16 +12,14 @@ source:
 
 build:
   number: 1
-  script: {{ PYTHON }} -m build
+  script: {{ PYTHON }} -m build && {{ PYTHON }} -m pip install dist/pdm_backend-{{ version }}-py3-none-any.whl
   noarch: python
 
-requirements:
-  build:
-    - python >=3.8
-    #- cross-python_{{ target_platform }}     # [build_platform != target_platform]
+requirements:     # [build_platform != target_platform]
   host:
     - python >=3.8
     - python-build
+    - pip
     - importlib-metadata >=3.6
   run:
     - python >=3.8
