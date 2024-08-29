@@ -17,14 +17,14 @@ build:
 
 requirements:
   build:
-    - python >= 3.8
+    - python >=3.8
     #- cross-python_{{ target_platform }}     # [build_platform != target_platform]
   host:
-    - python >= 3.8
+    - python >=3.8
     - python-build
     - importlib-metadata >=3.6
   run:
-    - python
+    - python >=3.8
     - importlib-metadata >=3.6
 
 test:
