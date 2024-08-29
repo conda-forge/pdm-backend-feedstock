@@ -26,13 +26,13 @@ requirements:
     - importlib-metadata >=3.6
 
 test:
-  # source_files:
-  #   - src
-  #   - tests
+  source_files:
+    - src
+    - tests
   imports:
     - pdm.backend
   commands:
-    - pytest --pyargs pdm.backend
+    - pytest tests
   requires:
     - pytest
     - setuptools
