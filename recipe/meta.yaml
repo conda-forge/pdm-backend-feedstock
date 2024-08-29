@@ -32,7 +32,7 @@ test:
   imports:
     - pdm.backend
   commands:
-    - pytest tests
+    - git config --global user.email "ci@github.com" && git config --global user.name "C I" && pytest tests
   requires:
     - pytest
     - setuptools
