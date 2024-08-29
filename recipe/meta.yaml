@@ -26,7 +26,7 @@ requirements:
     - importlib-metadata >=3.6  # [py<310]
 
 test:
-  source:
+  source_files:
     - src
     - tests
   imports:
