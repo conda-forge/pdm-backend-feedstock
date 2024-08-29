@@ -12,7 +12,7 @@ source:
 
 build:
   number: 1
-  script: {{ PYTHON }} scripts/build.py
+  script: {{ PYTHON }} -m build
 
 requirements:
   build:
@@ -20,6 +20,7 @@ requirements:
     #- cross-python_{{ target_platform }}     # [build_platform != target_platform]
   host:
     - python
+    - python-build
     - importlib-metadata >=3.6  # [py<310]
   run:
     - python
