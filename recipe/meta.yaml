@@ -38,6 +38,8 @@ test:
     - setuptools
     - pytest-cov
     - pytest-xdist
+    - git
+    - gcc
 
 about:
   home: https://pypi.org/project/pdm-backend/
