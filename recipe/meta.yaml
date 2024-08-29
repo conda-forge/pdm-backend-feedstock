@@ -26,12 +26,18 @@ requirements:
     - importlib-metadata >=3.6  # [py<310]
 
 test:
+  source:
+    - src
+    - tests
   imports:
     - pdm.backend
   commands:
-    - pip check
+    - pytest ./tests
   requires:
-    - pip
+    - pytest
+    - setuptools
+    - pytest-cov
+    - pytest-xdist
 
 about:
   home: https://pypi.org/project/pdm-backend/
