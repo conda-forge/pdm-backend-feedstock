@@ -13,6 +13,7 @@ source:
 build:
   number: 1
   script: {{ PYTHON }} -m build
+  noarch: python
 
 requirements:
   build:
@@ -21,10 +22,10 @@ requirements:
   host:
     - python
     - python-build
-    - importlib-metadata >=3.6  # [py<310]
+    - importlib-metadata >=3.6
   run:
     - python
-    - importlib-metadata >=3.6  # [py<310]
+    - importlib-metadata >=3.6
 
 test:
   # source_files:
