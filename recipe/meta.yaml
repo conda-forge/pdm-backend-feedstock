@@ -11,28 +11,35 @@ source:
   sha256: a8616f628ec84353d7a0ba86b228dcf01bab5debc9e4d1a29e5311a52425d594
 
 build:
-  number: 0
-  script: {{ PYTHON }} -m pip install . -vv
+  number: 1
+  script: {{ PYTHON }} -m build && {{ PYTHON }} -m pip install dist/pdm_backend-{{ version }}-py3-none-any.whl
+  noarch: python
 
 requirements:
-  build:
-    - python                                 # [build_platform != target_platform]
-    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
   host:
+    - python >=3.8
+    - python-build
     - pip
-    - python
-    - importlib-metadata >=3.6  # [py<310]
+    - importlib-metadata >=3.6
   run:
-    - python
-    - importlib-metadata >=3.6  # [py<310]
+    - python >=3.8
+    - importlib-metadata >=3.6
 
 test:
+  source_files:
+    - src
+    - tests
   imports:
     - pdm.backend
   commands:
-    - pip check
+    - git config --global user.email "ci@github.com" && git config --global user.name "C I" && pytest tests
   requires:
-    - pip
+    - pytest
+    - setuptools
+    - pytest-cov
+    - pytest-xdist
+    - git
+    - gcc
 
 about:
   home: https://pypi.org/project/pdm-backend/
