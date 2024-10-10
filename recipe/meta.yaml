@@ -1,5 +1,5 @@
 {% set name = "pdm-backend" %}
-{% set version = "2.4.1" %}
+{% set version = "2.4.2" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pdm_backend-{{ version }}.tar.gz
-  sha256: d6404e94a612459c5213cc63df035711244173c57441b8312a2a6f4a8c110934
+  sha256: 1f833e527ae172f34b4b84e2fcf1f65859a2a5ca746e496d8313b3ea6539969f
 
 build:
   number: 0
