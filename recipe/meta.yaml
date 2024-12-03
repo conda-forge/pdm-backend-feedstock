@@ -7,22 +7,22 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pdm_backend-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pdm_backend-{{ version }}.tar.gz
   sha256: dbd9047a7ac10d11a5227e97163b617ad5d665050476ff63867d971758200728
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install ./ -vv
   noarch: python
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - python-build
     - pip
     - importlib-metadata >=3.6
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - importlib-metadata >=3.6
 
 test:
@@ -40,6 +40,7 @@ test:
     - pytest-xdist
     - git
     - gcc
+    - python {{ python_min }}
 
 about:
   home: https://pypi.org/project/pdm-backend/
