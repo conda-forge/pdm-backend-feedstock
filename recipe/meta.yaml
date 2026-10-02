@@ -1,5 +1,5 @@
 {% set name = "pdm-backend" %}
-{% set version = "2.4.10" %}
+{% set version = "2.5.0" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/pdm_backend-{{ version }}.tar.gz
-  sha256: 551b049379d4f270cba18f5bf73031cc229a4f883e085265465d326d4a636861
+  sha256: 7953b994563d3151755e3364b9d0cfe817ed0eaecdf27c8f777f412d26bcd98a
 
 build:
   number: 0
